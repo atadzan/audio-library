@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - '6432:5432'
+    environment:
+      POSTGRES_PASSWORD: helloWorld
+      POSTGRES_USER: helloUser
+      POSTGRES_DB: helloDB
+    volumes:
+      - hello-volume:/var/lib/postgresql/data
+
+  storage:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.minio
+    ports:
+      - '9001:9000'
+      - '9091:9090'
+    volumes:
+      - storage-volume:/storage
+
+volumes:
+  storage-volume:
+  hello-volume:

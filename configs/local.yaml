@@ -1,0 +1,8 @@
+app:
+  port: 8080
+  databaseURL: postgres://helloUser:helloWorld@localhost:6432/helloDB?sslmode=disable
+
+minIO:
+  endpoint: localhost:9001
+  accessKeyId: storage_admin
+  secretAccessKeyId: storage_password

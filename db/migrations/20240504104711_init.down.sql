@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS liked_tracks;
+DROP TABLE IF EXISTS tracks;
+DROP TABLE IF EXISTS users;
